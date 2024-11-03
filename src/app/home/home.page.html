@@ -1,0 +1,86 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <strong>Ready to create an app?</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>opciones Accordion</ion-label>
+
+
+        </ion-item>
+        <div class="ion-padding" slot="content">First Content
+          <ion-radio-group [compareWith]="compareWith" (ionChange)="handleChange($event)">
+            <ion-item *ngFor="let food of foods; trackBy: trackItems">
+              <ion-radio [value]="food">{{ food.name }}</ion-radio>
+            </ion-item>
+          </ion-radio-group>
+
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="second">
+        <ion-item slot="header" color="light">
+          <ion-label>Second Accordion</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">Second Content
+          <ion-radio-group [compareWith]="compareWith" (ionChange)="handleChange($event)">
+            <ion-item *ngFor="let food of foods; trackBy: trackItems">
+              <ion-radio [value]="food">{{ food.name }}</ion-radio>
+            </ion-item>
+          </ion-radio-group>
+
+        </div>
+
+      </ion-accordion>
+
+
+      <ion-accordion value="third">
+        <ion-item slot="header" color="light">
+          <ion-label>Third Accordion</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">Third Content
+          <ion-radio-group [compareWith]="compareWith" (ionChange)="handleChange($event)">
+            <ion-item *ngFor="let food of foods; trackBy: trackItems">
+              <ion-radio [value]="food">{{ food.name }}</ion-radio>
+            </ion-item>
+          </ion-radio-group>
+
+        </div>
+      </ion-accordion>
+
+    </ion-accordion-group>
+    <div class="botones">
+      <ion-button id="present-alert">Click Me</ion-button>
+      <ion-alert
+        trigger="present-alert"
+        header="A Short Title Is Best"
+        subHeader="A Sub Header Is Optional"
+        message="A message should be a short, complete sentence."
+        [buttons]="alertButtons"
+      ></ion-alert>
+    </div>
+
+
+  </div>
+
+
+
+
+</ion-content>
